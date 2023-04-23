@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page de connexion</title>
+    <link rel="stylesheet" href="css/style_index.css">
+	<!-- logo marine -->
+	<link href="img/logo_marine.ico" rel="icon">
+</head>
+<body>
+	<div class="container">
+		<form method="post" id="login-form">
+			<h1>Connexion</h1>
+			<label for="identifiant">Identifiant:</label>
+			<input type="text" id="identifiant" name="identifiant" required>
+			<label for="motdepasse">Mot de passe:</label>
+			<input type="password" id="motdepasse" name="motdepasse" required>
+			<input type="submit" value="Se connecter">
+		</form>
+	</div>
+    <script>
+		// sélectionner le formulaire et les champs d'identifiant et de mot de passe
+		const loginForm = document.querySelector('#login-form');
+		const identifiantInput = document.querySelector('#identifiant');
+		const motDePasseInput = document.querySelector('#motdepasse');
+
+		// ajouter un gestionnaire d'événements "submit" au formulaire
+		loginForm.addEventListener('submit', function(event) {
+			event.preventDefault(); // empêcher la soumission par défaut du formulaire
+
+			// vérifier si l'identifiant et le mot de passe sont corrects
+			if (identifiantInput.value === 'alex' && motDePasseInput.value === 'alex') {
+				window.location.href = 'home.html'; // rediriger l'utilisateur vers la page "home.html"
+			} else {
+				alert('Identifiant ou mot de passe incorrect'); // afficher un message d'erreur
+			}
+		});
+	</script>
+</body>
+</html>
